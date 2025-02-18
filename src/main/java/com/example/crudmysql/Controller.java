@@ -78,6 +78,8 @@ public class Controller implements Initializable {
             ));
         }
 
+        alertManager = new AlertManager();
+
         Clases.BaseConexion conexion = new Clases.BaseConexion();
         conexion.iniciarConexion();
 
