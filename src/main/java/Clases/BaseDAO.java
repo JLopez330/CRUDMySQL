@@ -13,6 +13,11 @@ public class BaseDAO<T> {
         this.tableName = tableName;
     }
 
+    /**
+     * El metodo encargado de insertar datos en la tabla seleccionada por el string de tableName
+     * @param objeto
+     * @return id
+     */
     public int insertar(T objeto) {
         BaseConexion conn = new BaseConexion();
         Field[] fields = type.getDeclaredFields();
@@ -66,6 +71,10 @@ public class BaseDAO<T> {
         return -1;
     }
 
+    /**
+     * Metodo para obtener todos los datos de la tabla deseada.
+     * @return Lista de datos
+     */
     public List<T> obtenerTodos() {
         List<T> lista = new ArrayList<>();
         BaseConexion conn = new BaseConexion();
@@ -91,6 +100,12 @@ public class BaseDAO<T> {
         return lista;
     }
 
+    /**
+     * Metodo para modificar datos en una tabla o más en base a los datos ingresados.
+     * @param objeto
+     * @param id
+     * @return boolean de comprobación si se realizaron los cambios
+     */
     public boolean modificar(T objeto, int id) {
         BaseConexion conn = new BaseConexion();
         String sql = "UPDATE " + tableName + " SET ";
@@ -138,7 +153,11 @@ public class BaseDAO<T> {
         }
     }
 
-
+    /**
+     * Elimina una persona y cada una de sus dependencias sean telefonos y/o vehiculos.
+     * @param objeto
+     * @return boolean para comprobar la eliminación.
+     */
     public boolean eliminar(T objeto) {
         BaseConexion conn = new BaseConexion();
         String sql = "DELETE FROM " + tableName + " WHERE id = ?";

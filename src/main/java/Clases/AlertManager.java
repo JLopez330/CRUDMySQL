@@ -10,7 +10,7 @@ public class AlertManager {
         alert = new Alert(Alert.AlertType.INFORMATION);
     }
 
-    // Metodo privado para mostrar alertas de información
+    // Metodo para mostrar alertas de información
     public void showAlert(String title, String content) {
         alert.setTitle(title);
         alert.setHeaderText(null);
