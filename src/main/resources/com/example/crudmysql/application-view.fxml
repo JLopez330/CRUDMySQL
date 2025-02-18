@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1104.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crudmysql.Controller">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="472.0" prefWidth="243.0" style="-fx-border-color: A3A3A3;">
+         <children>
+            <Label layoutX="16.0" layoutY="27.0" text="ID:" />
+            <Label layoutX="15.0" layoutY="65.0" text="Nombre:" />
+            <Label layoutX="12.0" layoutY="106.0" text="Dirección:" />
+            <Label layoutX="14.0" layoutY="150.0" text="Teléfono:" />
+            <TextField fx:id="idField" layoutX="72.0" layoutY="23.0" prefHeight="25.0" prefWidth="150.0" />
+            <TextField fx:id="nombreField" layoutX="72.0" layoutY="61.0" prefHeight="25.0" prefWidth="150.0" />
+            <TextField fx:id="direccionField" layoutX="73.0" layoutY="102.0" prefHeight="25.0" prefWidth="150.0" />
+            <TextField fx:id="telefonoField" layoutX="73.0" layoutY="146.0" prefHeight="25.0" prefWidth="150.0" />
+            <Button layoutX="22.0" layoutY="322.0" mnemonicParsing="false" onAction="#guardarDatosGenerico" prefHeight="25.0" prefWidth="200.0" text="Guardar" />
+            <Button layoutX="28.0" layoutY="373.0" mnemonicParsing="false" onAction="#modificarDatos" text="Modificar" />
+            <Button layoutX="148.0" layoutY="373.0" mnemonicParsing="false" onAction="#eliminarDatos" prefHeight="25.0" prefWidth="75.0" text="Eliminar" />
+            <Label layoutX="14.0" layoutY="196.0" text="Vehiculo:" />
+            <Label layoutX="22.0" layoutY="240.0" text="Color:" />
+            <TextField fx:id="colorField" layoutX="74.0" layoutY="235.0" />
+            <Label layoutX="17.0" layoutY="281.0" text="Manejo:" />
+            <TextField fx:id="manejoField" layoutX="74.0" layoutY="277.0" />
+            <ChoiceBox fx:id="vehiculoBox" layoutX="72.0" layoutY="193.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="tablaPersonas" layoutX="351.0" layoutY="14.0" onMouseClicked="#seleccionarPersona" prefHeight="280.0" prefWidth="595.0">
+         <columns>
+            <TableColumn fx:id="columnaIdPersona" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="columnaNombre" prefWidth="243.0" text="Nombre" />
+            <TableColumn fx:id="columnaDireccion" prefWidth="276.0" text="Direccion" />
+         </columns></TableView>
+      <TableView fx:id="tablaTelefonos" layoutX="274.0" layoutY="307.0" prefHeight="265.0" prefWidth="358.0">
+         <columns>
+            <TableColumn fx:id="columnaIdTelefono" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="columnaTelefono" prefWidth="194.0" text="Telefono" />
+            <TableColumn fx:id="columnaIdPersonaTelefono" prefWidth="91.0" text="Id Persona" />
+         </columns></TableView>
+      <TableView fx:id="tablaVehiculo" layoutX="649.0" layoutY="307.0" prefHeight="265.0" prefWidth="438.0">
+         <columns>
+            <TableColumn fx:id="columnaIdVehiculo" prefWidth="58.0" text="Id" />
+            <TableColumn fx:id="columnaTipoVehiculo" prefWidth="107.0" text="Tipo" />
+            <TableColumn fx:id="columnaColorVehiculo" prefWidth="100.0" text="Color" />
+            <TableColumn fx:id="columnaManejoVehiculo" prefWidth="100.0" text="Manejo" />
+            <TableColumn fx:id="columnaIdPersonaVehiculo" prefWidth="72.0" text="Id Persona" />
+         </columns></TableView>
+   </children>
+</AnchorPane>
